@@ -12,4 +12,17 @@ Please fefer to https://strimzi.io/quickstarts/
 kubectl apply -f kafka-topic.yaml
 ```
 
+## Build the Java Projects
+```
+mvn clean install
+```
+
+## Build the Docker images (Windows Hyper-v)
+Open Powershell window with Administrator
+```
+minikube docker-env
+minikube -p minikube docker-env | Invoke-Expression
+docker build -t kafka-producer kafka-producer/
+docker build -t kafka-consumer kafka-consumer/
+```
 
