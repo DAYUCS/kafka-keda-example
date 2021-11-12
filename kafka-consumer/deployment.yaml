@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-consumer-deployment
+  labels:
+    app: kafka-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-consumer
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+        - name: kafka-consumer
+          image: kafka-consumer
+          imagePullPolicy: Never
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVER
+              value: "my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
+            - name: KAFKA_ORDERS_TOPIC
+              value: "test"

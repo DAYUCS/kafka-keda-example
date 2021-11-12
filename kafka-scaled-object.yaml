@@ -1,0 +1,18 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: kafka-scaledobject
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: kafka-consumer-deployment # Required Name of the deployment we want to scale.
+  pollingInterval: 5
+  triggers:
+  - type: kafka
+    metadata:
+      # Required
+      bootstrapServers: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092 # Kafka bootstrap server host and port
+      consumerGroup: order-shipper  # Make sure that this consumer group name is the same one as the one that is consuming topics
+      topic: test
+      lagThreshold: "50"
+      offsetResetPolicy: latest
