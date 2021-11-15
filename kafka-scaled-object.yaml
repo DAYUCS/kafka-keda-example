@@ -6,7 +6,7 @@ metadata:
 spec:
   scaleTargetRef:
     name: kafka-consumer-deployment # Required Name of the deployment we want to scale.
-  pollingInterval: 5
+  pollingInterval: 30
   triggers:
   - type: kafka
     metadata:
