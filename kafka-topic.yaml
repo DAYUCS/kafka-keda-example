@@ -1,9 +1,0 @@
-apiVersion: kafka.strimzi.io/v1beta2
-kind: KafkaTopic
-metadata:
-  name: test
-  labels:
-    strimzi.io/cluster: "my-cluster"
-spec:
-  partitions: 5
-  replicas: 1

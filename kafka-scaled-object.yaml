@@ -14,5 +14,5 @@ spec:
       bootstrapServers: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092 # Kafka bootstrap server host and port
       consumerGroup: order-shipper  # Make sure that this consumer group name is the same one as the one that is consuming topics
       topic: test
-      lagThreshold: "50"
+      lagThreshold: '50'
       offsetResetPolicy: latest
