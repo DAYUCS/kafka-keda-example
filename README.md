@@ -40,9 +40,9 @@ kubectl create -f kafka-consumer/deployment.yaml
 ```
 kubectl create -f kafka-scaled-object.yaml
 ```
-You'll find out that eventually the pod number of Kafka-consumer decrease to 0.
+You'll find out that eventually the pod number of Kafka-consumer decreases to 0.
 
 
 Use command kubectl port-forward/pods/kafka-producer-deployment... 8090:8090 -n default to expose the service.
 Accessing http://localhost:8090/orders/50 will produce 50 messages. Wait till pod numbers of kafka-consumer 
-decreate to 9, then change 50 to 60, 100, 150, 200, 300, or 1000 etc, find out how the pod numbers changes.
+decreases to 0, then change 50 to 60, 100, 150, 200, 300, or 1000 etc, find out how the pod numbers changes.
